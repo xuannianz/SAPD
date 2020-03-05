@@ -64,10 +64,6 @@ def main():
         cv2.namedWindow('image', cv2.WINDOW_NORMAL)
         cv2.imshow('image', src_image)
         key = cv2.waitKey(0)
-        if chr(key) == 'y':
-            import os.path as osp
-            image_filename = osp.split(image_path)[-1]
-            cv2.imwrite(f'test/{image_filename}', src_image)
 
 
 if __name__ == '__main__':
