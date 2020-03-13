@@ -14,8 +14,7 @@ def main():
     os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 
     phi = 0
-    feature_fusion = False
-    model_path = 'checkpoints/pascal_16_0.2373_0.5481_0.7820_0.7850.h5'
+    model_path = 'checkpoints/2020-03-13/pascal_64_0.2799_0.4923_0.7896_w.h5'
     image_sizes = (512, 640, 768, 896, 1024, 1280, 1408)
     image_size = image_sizes[phi]
     classes = [
@@ -29,7 +28,6 @@ def main():
     model, prediction_model = sapd(phi=phi,
                                    num_classes=num_classes,
                                    score_threshold=score_threshold,
-                                   feature_fusion=feature_fusion
                                    )
     prediction_model.load_weights(model_path, by_name=True)
 

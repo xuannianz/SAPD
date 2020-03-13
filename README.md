@@ -23,12 +23,13 @@ This project is released under the Apache License. Please take their licenses in
 ## Evaluate
 1. PASCAL VOC
     * `python3 eval/common.py` to evaluate pascal model by specifying model path there.
-    * The best evaluation results (phi=0, score_threshold=0.01, mAP<sub>50</sub>) on VOC2007 test are: 
+    * The best evaluation results (score_threshold=0.01, mAP<sub>50</sub>) on VOC2007 test are: 
 
-    | FPN | mAP<sub>50</sub> | weights size |
-    | ---- | ---- | ---- |
-    | RetinaNet FPN    | [0.7850](https://drive.google.com/open?id=1cOOGV5xCIMsUAHENllhBiTNfaCAeTpRp) | 61M | 
-    | EfficientDet FPN (--feature-fusion)| [0.7658](https://drive.google.com/open?id=1t3kPUoCft5OI7zLunQFqpDy-ccn_SgOt) | 18M |
+    | phi | 0 |
+    | ---- | ---- |
+    | mAP<sub>50</sub> | [0.7896](https://drive.google.com/open?id=1Ga3NC327LyUeulifzIihUdTiwpZXAKge) | 
+    | weights size | 17M |  
+    
 2. MSCOCO
     * `python3 eval/coco.py` to evaluate coco model by specifying model path there.
 ## Test

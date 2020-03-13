@@ -32,7 +32,6 @@ from tensorflow.keras.optimizers import Adam, SGD
 from augmentor.color import VisualEffect
 from augmentor.misc import MiscEffect
 from model import sapd
-from losses import smooth_l1, focal, smooth_l1_quad
 from efficientnet import BASE_WEIGHTS_PATH, WEIGHTS_HASHES
 
 
@@ -235,7 +234,6 @@ def parse_args(args):
     parser.add_argument('--snapshot', help='Resume training from a snapshot.')
     parser.add_argument('--freeze-backbone', help='Freeze training of backbone layers.', action='store_true')
     parser.add_argument('--freeze-bn', help='Freeze training of BatchNormalization layers.', action='store_true')
-    parser.add_argument('--feature-fusion', help='Use feature fusion', action='store_true')
 
     parser.add_argument('--batch-size', help='Size of the batches.', default=1, type=int)
     parser.add_argument('--phi', help='Hyper parameter phi', default=0, type=int, choices=(0, 1, 2, 3, 4, 5, 6))
@@ -283,7 +281,6 @@ def main(args=None):
                                    num_classes=num_classes,
                                    freeze_bn=args.freeze_bn,
                                    batch_size=args.batch_size,
-                                   feature_fusion=args.feature_fusion,
                                    )
 
     # load pretrained weights

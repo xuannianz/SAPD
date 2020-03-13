@@ -272,7 +272,6 @@ if __name__ == '__main__':
     os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 
     phi = 0
-    feature_fusion = False
     common_args = {
         'batch_size': 1,
         'phi': phi,
@@ -285,7 +284,7 @@ if __name__ == '__main__':
         skip_difficult=True,
         **common_args
     )
-    model_path = 'checkpoints/pascal_16_0.2373_0.5481_0.7820_0.7850.h5'
+    model_path = 'checkpoints/2020-03-13/pascal_64_0.2799_0.4923_0.7896_w.h5'
     input_shape = (test_generator.image_size, test_generator.image_size)
     num_classes = test_generator.num_classes()
     model, prediction_model = sapd(num_classes=num_classes, **common_args)
